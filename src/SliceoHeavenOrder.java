@@ -6,16 +6,21 @@ public class SliceoHeavenOrder{
   private String orderID;
   private String pizzaIngredients;
   private double orderTotal;
-
+  private String sides;
+  private String drinks;
   public SliceoHeavenOrder() {
   this.orderID = DEF_ORDER_ID;
   this.pizzaIngredients = DEF_PIZZA_INGREDIENTS;
   this.orderTotal = DEF_ORDER_TOTAL;
+  this.sides = "";
+  this.drinks = "";
   }
   public SliceoHeavenOrder(String orderID, String pizzaIngredients, double orderTotal) {
     this.orderID = orderID;
     this.pizzaIngredients = pizzaIngredients;
     this.orderTotal = orderTotal;
+    this.sides = "";
+    this.drinks = "";
   }
   public String getOrderID() {
     return orderID; 
@@ -38,11 +43,28 @@ public double getOrderTotal() {
 public void setOrderTotal(double orderTotal) {
     this.orderTotal = orderTotal; 
   }
+  public String getSides() {
+    return sides;
+}
+
+public void setSides(String sides) {
+    this.sides = sides;
+}
+
+public String getDrinks() {
+    return drinks;
+}
+
+public void setDrinks(String drinks) {
+    this.drinks = drinks;
+}
 
 private void printReceipt() {
     System.out.println("OrderID: " + orderID); 
     System.out.println("PizzaIngredients: " + pizzaIngredients); 
     System.out.println("OrderTotal: " + orderTotal); 
+    System.out.println("Sides: " + sides);
+    System.out.println("Drinks: " + drinks);
 }
 public void displayReceipt() {
   printReceipt(); 
