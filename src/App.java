@@ -1,10 +1,19 @@
 public class App {
-    public static void main (String[] args) {
-    SliceoHeavenOrder order = new SliceoHeavenOrder();
-    SliceoHeavenOrder order2= new SliceoHeavenOrder("DEF-SOH-099","Mozzarella Cheese",15.00);
-    System.out.println("OrderID is:" + order2.getOrderID());
-    System.out.println("PizzaIngredients is:" + order2.getPizzaIngredients());
-    System.out.println("OrderTotal is:" + String.format("%.2f",order.getOrderTotal()));
-}
-    
+    public static void main(String[] args) throws Exception {
+
+        SliceoHeavenOrder sliceoheavenorder1 = new SliceoHeavenOrder();
+        System.out.println("Default Order ID: " + sliceoheavenorder1.getOrderID());
+        System.out.println("Default Pizza Ingredients: " + sliceoheavenorder1.getPizzaIngredients());
+        System.out.println("Default Order Total : " + String.format("%.2f", sliceoheavenorder1.getOrderTotal()));
+
+        SliceoHeavenOrder sliceoheavenorder2 = new SliceoHeavenOrder("1234", "Cheese", 20.00);
+        System.out.println("Custom Order ID: " + sliceoheavenorder2.getOrderID());
+        System.out.println("Custom Pizza Ingredients: " + sliceoheavenorder2.getPizzaIngredients());
+
+        System.out.println("Custom Order Total : " + String.format("%.2f", sliceoheavenorder2.getOrderTotal()));
+
+        sliceoheavenorder2.takeOrder("1234", "2 pizza", 20.00);
+
+        System.out.println("Custom Order Total : " + String.format("%.2f", sliceoheavenorder2.getOrderTotal()));
+    }
 }
